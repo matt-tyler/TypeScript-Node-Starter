@@ -18,7 +18,7 @@ jobs:
         needs: credentials
         steps:
             - name: build
-              uses: matt-tyler/aws-codebuild-run-project@master
+              uses: matt-tyler/aws-codebuild-run-build@master
               with:
                   project-name: Build-myapp-Node
     test:
@@ -26,7 +26,7 @@ jobs:
         needs: credentials
         steps:
             - name: test
-              uses: matt-tyler/aws-codebuild-run-project@master
+              uses: matt-tyler/aws-codebuild-run-build@master
               with:
                   project-name: Test-myapp-Node
     lint:
@@ -34,6 +34,6 @@ jobs:
         needs: credentials
         steps:
             - name: lint
-              uses: matt-tyler/aws-codebuild-run-project@master
+              uses: matt-tyler/aws-codebuild-run-build@master
               with:
                   project-name: Lint-myapp-Node
