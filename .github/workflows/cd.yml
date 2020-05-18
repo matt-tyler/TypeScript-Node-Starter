@@ -2,7 +2,7 @@ name: Node CI
 on:
     push:
         branches:
-            - mastr
+            - master
 jobs:
     ci:
         runs-on: ubuntu-latest
