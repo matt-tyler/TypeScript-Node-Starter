@@ -22,6 +22,7 @@ jobs:
               with:
                   project-name: DemoApp-Status-Check
                   buildspec-override: ci/build.spec.yaml
+
     # test:
     #     runs-on: ubuntu-latest
     #     steps:
