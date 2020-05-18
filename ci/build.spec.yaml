@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - wget https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY/archive/$GITHUB_SHA.zip \
+        -O archive.zip
+      - unzip archive.zip
+      - rm archive.zip
+      - npm ci
+  build:
+    commands:
+      - npm run build
+
+artifacts:
+  files: 
+    - "**/*""
