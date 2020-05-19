@@ -4,6 +4,8 @@ env:
     - GITHUB_SHA
     - GITHUB_REPOSITORY
     - GITHUB_REF
+    - GITHUB_TREE_URL
+    - GITHUB_COMMIT_URL
 phases:
   install:
     runtime-versions:
