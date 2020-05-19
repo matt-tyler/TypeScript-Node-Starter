@@ -10,14 +10,14 @@ phases:
       nodejs: 12
     commands:
       - |
-          if [[ $CODEBUILD_INITIATOR == codepipeline* ]] ;
-          then
-            . ./github.env
-          else
-            wget -O archive.tar.gz https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY/archive/$GITHUB_SHA.tar.gz
-            tar -xvf archive.tar.gz --strip 1
-            rm archive.tar.gz
-          fi
+          case "$CODEBUILD_INITIATOR" in
+            codepipeline*)
+              . ./github.env;;
+            *)
+              wget -O archive.tar.gz https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY/archive/$GITHUB_SHA.tar.gz
+              tar -xvf archive.tar.gz --strip 1
+              rm archive.tar.gz
+          esac
       - npm ci
   build:
     commands:
