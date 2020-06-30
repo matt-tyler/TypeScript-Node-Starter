@@ -22,6 +22,7 @@ jobs:
               with:
                   endpoint: ${{ secrets.ENDPOINT }}
                   use-credentials: false
+                  project-name: test-project
 
     # test:
     #     runs-on: ubuntu-latest
