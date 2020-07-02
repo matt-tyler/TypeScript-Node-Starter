@@ -24,6 +24,7 @@ jobs:
                   endpoint: ${{ secrets.ENDPOINT }}
                   use-credentials: false
                   project-name: test-project
+                  buildspec-override: build.spec.yml
 
 
     # test:
