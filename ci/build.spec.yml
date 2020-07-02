@@ -11,19 +11,12 @@ phases:
     runtime-versions:
       nodejs: 12
     commands:
-      - |
-          case "$CODEBUILD_INITIATOR" in
-            codepipeline*)
-              . ./github.env;;
-            *)
-              wget -O archive.tar.gz https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY/archive/$GITHUB_SHA.tar.gz
-              tar -xvf archive.tar.gz --strip 1
-              rm archive.tar.gz
-          esac
-      - npm ci
+      - ls -alh
+      # - npm ci
   build:
     commands:
-      - npm run build
+      - ls -alh
+      # - npm run build
 artifacts:
   files:
     - "**/*"
